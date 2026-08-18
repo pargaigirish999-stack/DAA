@@ -1,19 +1,16 @@
 class Solution {
     public int findNumbers(int[] nums) {
-        int count =0;
-        for(int i:nums){
-            int digits = CountDigit(i);
-            if (digits % 2 == 0){
-                count+=1;
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            int num=nums[i];
+            int digit=0;
+            while(num>0){
+                num=num/10;
+                digit++;
             }
-        }
-        return count;
-    }
-    public int CountDigit(int i){
-        int count =0;
-        while (i>0){
-            i =i/10;
-            count+=1;
+            if(digit%2==0){
+                count++;
+            }
         }
         return count;
     }
